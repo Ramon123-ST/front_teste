@@ -22,10 +22,10 @@ html {
 }
 
 [id] {
-  scroll-margin-top: 100px; /* Ajuste conforme a altura do seu header fixo */
+  scroll-margin-top: 100px;
 }
 
-.container {
+.recipiente {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 40px;
@@ -36,22 +36,22 @@ a { text-decoration: none; color: inherit; }
 button { font-family: inherit; cursor: pointer; }
 
 /* ========================================
-   HEADER
+   CABECALHO
    ======================================== */
-.header {
+.cabecalho {
   background: #ffffff;
   padding: 10px 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  position: fixed;        /* Mudou de sticky para fixed */
-  top: 15px;              /* Espaço do topo */
-  left: 20px;             /* Espaço lateral */
-  right: 20px;            /* Espaço lateral */
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  right: 20px;
   z-index: 1000;
-  border-radius: 15px;    /* Cantos arredondados (opcional, como na imagem) */
+  border-radius: 15px;
   max-width: calc(100% - 40px);
 }
 
-.nav {
+.navegacao {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,9 +59,10 @@ button { font-family: inherit; cursor: pointer; }
   gap: 20px;
 }
 
-.logo img { 
+.logotipo img { 
   height: 62px;
   width: auto;
+  margin-left: 5px;
  }
 
 .menu {
@@ -78,7 +79,7 @@ button { font-family: inherit; cursor: pointer; }
 
 .menu a:hover { color: #3b82f6; }
 
-.search-bar input {
+.barrabusca input {
   width: 360px;
   padding: 12px 24px;
   border: 1px solid #e2e8f0;
@@ -88,19 +89,19 @@ button { font-family: inherit; cursor: pointer; }
   transition: border 0.25s;
 }
 
-.search-bar input:focus {
+.barrabusca input:focus {
   outline: none;
   border-color: #3b82f6;
 }
 
-.icons {
+.icones {
   display: flex;
   align-items: center;
-  gap: 20px; /* Espaço entre os ícones */
+  gap: 20px;
   height: 40px;
 }
 
-.icon-link {
+.linkicone {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,26 +114,25 @@ button { font-family: inherit; cursor: pointer; }
   position: relative;
 }
 
-.icon-link:hover {
+.linkicone:hover {
   background: rgba(0, 0, 0, 0.05);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.icon-link img {
+.linkicone img {
   width: 22px;
   height: 22px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0); /* Se quiser ícones pretos */
+  filter: grayscale(100%) brightness(0);
   transition: filter 0.3s ease;
 }
 
-.icon-link:hover img {
-  filter: grayscale(0%) brightness(0); /* Volta à cor original no hover */
+.linkicone:hover img {
+  filter: grayscale(0%) brightness(0);
 }
 
-/* Badge no carrinho (opcional) */
-.icon-link.menu-toggle::after {
+.linkicone.alternarmenu::after {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -149,47 +149,100 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ========================================
-   HERO
+   HEROI
    ======================================== */
-.hero {
-  background: linear-gradient(120deg, #1e40af 0%, #16a34a 100%);
+/* HERO */
+.heroi {
+  min-height: 100vh;
   color: #fff;
-  padding: 120px 0 150px;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-grid {
+/* Carrossel */
+.carrossel {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  padding: 120px 0 150px;
+  transition: opacity 1.3s ease, visibility 0s linear 1.3s;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.3s ease;
+}
+
+/* Conteúdo */
+.recipiente {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.gradeheroi {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
   align-items: center;
   gap: 70px;
 }
 
-.hero-text h1 {
+/* ====== TEXTO FIXO ====== */
+
+.textoheroi h1 {
   margin-top: 59px;
-  font-size: 72px;
+  font-size: clamp(36px, 6vw, 72px);
   font-weight: 800;
   line-height: 1.02;
   margin-bottom: 8px;
+  position: relative;
+  z-index: 20;
 }
 
-.hero-text h2 {
-  font-size: 44px;
+.textoheroi h2 {
+  font-size: clamp(26px, 4vw, 44px);
   font-weight: 400;
+  opacity: .9;
   margin-bottom: 40px;
+  line-height: 1.2;
+  position: relative;
+  z-index: 20;
 }
 
-.price del {
-  font-size: 30px;
+/* Preço */
+.preco {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.preco del {
+  font-size: 28px;
   opacity: 0.75;
-  margin-right: 14px;
 }
 
-.price strong {
-  font-size: 54px;
+img{
+  margin-left: -59px;
+}
+
+.preco strong {
+  font-size: clamp(36px, 5vw, 54px);
   font-weight: 800;
 }
 
-.btn {
+/* Botão */
+.botao {
   background: #ff6b35;
   color: #fff;
   border: none;
@@ -197,40 +250,68 @@ button { font-family: inherit; cursor: pointer; }
   border-radius: 32px;
   font-weight: 700;
   font-size: 17px;
-  margin-left: 28px;
+  margin-left: 20px;
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
-  transition: all 0.25s;
+  transition: 0.25s;
+  cursor: pointer;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.5);
+.botao:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 107, 53, 0.55);
 }
 
-.hero-phone {
-  transform: rotate(14deg) scale(1.15);
+/* ========================= */
+/* IMAGEM ENTRANDO DA DIREITA */
+/* ========================= */
+
+.telefoneheroi {
+  position: absolute;
+  right: -900px;                 /* começa fora da tela */
+  top: 50%;
+  transform: translateY(-50%) rotate(12deg) scale(1.05);
   max-width: 620px;
-  margin-left: auto;
-  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 25px 45px rgba(0,0,0,0.35));
+  transition: all 1s cubic-bezier(.14, .55, .16, 1);
+  opacity: 0;
 }
+
+.slide.active .telefoneheroi {
+  right: 12%;                     /* posição final */
+  transform: translateY(-50%) rotate(0deg) scale(1.18);
+  opacity: 1;
+}
+
+/* Animações suaves do texto */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1.1s ease;
+}
+
+.slide.active .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ========================================
    PARCEIROS & BANNER PROMOCIONAL
    ======================================== */
-.partners {
+.parceiros {
   padding: 100px 0;
   text-align: center;
   background: #fff;
 }
 
-.partners h3 {
+.parceiros h3 {
   font-size: 30px;
   color: #1e293b;
   font-weight: 700;
   margin-bottom: 60px;
 }
 
-.partner-logos {
+.logoparceiros {
   display: flex;
   justify-content: center;
   gap: 120px;
@@ -238,7 +319,7 @@ button { font-family: inherit; cursor: pointer; }
   margin: 50px 0;
 }
 
-.partner-logos img {
+.logoparceiros img {
   height: 70px;
   width: auto;
   padding: 12px;
@@ -247,9 +328,9 @@ button { font-family: inherit; cursor: pointer; }
   transition: transform 0.3s;
 }
 
-.partner-logos img:hover { transform: scale(1.1); }
+.logoparceiros img:hover { transform: scale(1.1); }
 
-.promo-banner {
+.bannerpromo {
   background: #1070d6;
   color: #fff;
   padding: 10px 0;
@@ -265,14 +346,14 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ========================================
-   OFERTAS DO DIA — EXATAMENTE COMO VOCÊ QUER
+   OFERTAS DO DIA
    ======================================== */
-.offers {
+.ofertas {
   padding: 50px 0 140px;
   background: #ffffff;
 }
 
-.title-orange {
+.tituloalaranja {
   text-align: center;
   color: #f97316;
   font-size: 48px;
@@ -280,7 +361,7 @@ button { font-family: inherit; cursor: pointer; }
   margin-bottom: 50px;
 }
 
-.products-grid {
+.gradeprodutos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
@@ -288,7 +369,7 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto;
 }
 
-.product-card {
+.cartaproduto {
   background: #ffffff;
   border-radius: 28px;
   overflow: hidden;
@@ -299,21 +380,22 @@ button { font-family: inherit; cursor: pointer; }
   padding-bottom: 24px;
 }
 
-.product-card:hover {
+.cartaproduto:hover {
   transform: translateY(-14px);
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
 }
 
-.product-card img {
+.cartaproduto img {
   width: 100%;
   height: 280px;
   object-fit: contain;
   background: #eae8e8;
   padding: 30px;
   margin-bottom: 10px;
+  margin-left: 0;
 }
 
-.product-card h4 {
+.cartaproduto h4 {
   font-size: 17.5px;
   color: #1e293b;
   font-weight: 600;
@@ -325,23 +407,23 @@ button { font-family: inherit; cursor: pointer; }
   justify-content: center;
 }
 
-.product-card .price {
+.cartaproduto .preco {
   margin-bottom: 16px;
   font-size: 15px;
 }
 
-.product-card .price del {
+.cartaproduto .preco del {
   color: #94a3b8;
   margin-right: 8px;
 }
 
-.product-card .price strong {
+.cartaproduto .preco strong {
   color: #10b981;
   font-weight: 700;
   font-size: 19px;
 }
 
-.product-card .btn {
+.cartaproduto .botao {
   background: #fb923c;
   color: white;
   padding: 12px 32px;
@@ -354,21 +436,21 @@ button { font-family: inherit; cursor: pointer; }
   transition: all 0.3s;
 }
 
-.product-card .btn:hover {
+.cartaproduto .botao:hover {
   background: #f97316;
   transform: translateY(-2px);
 }
 
 /* ========================================
-   AVALIAÇÕES
+   AVALIACOES
    ======================================== */
-.reviews {
+.avaliacoes {
   background: linear-gradient(135deg, #1e4caf 0%, #2577eb 50%, #134d8b 100%);
   padding: 60px 0 90px;
   text-align: center;
 }
 
-.reviews h2 {
+.avaliacoes h2 {
   font-size: 46px;
   font-weight: 800;
   color: #fff;
@@ -376,7 +458,7 @@ button { font-family: inherit; cursor: pointer; }
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.reviews-grid {
+.gradeavaliacoes {
   display: flex;
   justify-content: center;
   gap: 60px;
@@ -385,7 +467,7 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto;
 }
 
-.review-card {
+.cartaavaliacao {
   background: rgba(255, 255, 255, 0.13);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -399,29 +481,30 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: -29px;
 }
 
-.review-card:hover {
+.cartaavaliacao:hover {
   transform: translateY(-12px);
   background: rgba(255, 255, 255, 0.3);
 }
 
-.review-card img {
+.cartaavaliacao img {
   width: 70px;
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
   float: left;
   margin-right: 20px;
+  margin-left: 0px;
   border: 5px solid #fff;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.2);
 }
 
-.review-card::after { content: ""; display: block; clear: both; }
+.cartaavaliacao::after { content: ""; display: block; clear: both; }
 
-.review-header { margin: 14px 0 22px; overflow: hidden; }
-.review-header strong { font-size: 19px; color: #fff; font-weight: 700; display: block; }
-.review-header p { font-size: 14.5px; color: rgba(255, 255, 255, 0.92); margin-top: 5px; }
+.cabecalhoavaliacao { margin: 14px 0 22px; overflow: hidden; }
+.cabecalhoavaliacao strong { font-size: 19px; color: #fff; font-weight: 700; display: block; }
+.cabecalhoavaliacao p { font-size: 14.5px; color: rgba(255, 255, 255, 0.92); margin-top: 5px; }
 
-.rating {
+.classificacao {
   float: right;
   background: #fff;
   color: #f59e0b;
@@ -435,13 +518,13 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.rating::before {
+.classificacao::before {
   content: "★★★★★";
   font-size: 14px;
   letter-spacing: -1.5px;
 }
 
-.review-card > p:last-child {
+.cartaavaliacao > p:last-child {
   clear: both;
   color: #fff;
   font-size: 16px;
@@ -449,50 +532,50 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 0.96;
   margin-top: 8px;
 }
+
 /* ========================================
-   FOOTER
+   RODAPE
    ======================================== */
-.footer {
-  background: #bfdbfe; /* Azul claro como na imagem */
+.rodape {
+  background: #bfdbfe;
   color: #1e293b;
   padding: 70px 0 40px;
   font-family: 'Inter', sans-serif;
   height: 290px;
 }
 
-.footer-grid {
+.graderodape {
   display: grid;
   grid-template-columns: auto 1fr 1fr 1fr;
   gap: 40px;
   align-items: start;
 }
 
-.footer-logo img {
+.logorodape img {
   height: 65px;
   width: auto;
   margin-top: -25px;
   margin-right: 35px;
 }
 
-/* Colunas */
-.footer-col h4 {
+.colunarodape h4 {
   font-weight: 700;
   font-size: 16px;
   margin-bottom: 36px;
   color: #1e40af;
 }
 
-.footer-col ul {
+.colunarodape ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-col ul li {
+.colunarodape ul li {
   margin-bottom: 10px;
 }
 
-.footer-col ul li a {
+.colunarodape ul li a {
   color: #1e293b;
   text-decoration: none;
   font-size: 14.5px;
@@ -500,18 +583,17 @@ button { font-family: inherit; cursor: pointer; }
   transition: color 0.2s ease;
 }
 
-.footer-col ul li a:hover {
+.colunarodape ul li a:hover {
   color: #3b82f6;
 }
 
-/* Redes Sociais */
-.social-links {
+.linkssociais {
   display: flex;
   flex-direction: column;
   gap: 19px;
 }
 
-.social-links a {
+.linkssociais a {
   display: flex;
   align-items: center;
   gap: 19px;
@@ -522,12 +604,12 @@ button { font-family: inherit; cursor: pointer; }
   transition: all 0.2s ease;
 }
 
-.social-links a:hover {
+.linkssociais a:hover {
   color: #3b82f6;
   transform: translateX(4px);
 }
 
-.social-links img {
+.linkssociais img {
   width: 40px;
   height: 30px;
   object-fit: contain;
@@ -537,11 +619,11 @@ button { font-family: inherit; cursor: pointer; }
    RESPONSIVIDADE
    ======================================== */
 @media (max-width: 992px) {
-  .footer-grid {
+  .graderodape {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-  .footer-logo {
+  .logorodape {
     grid-column: 1 / -1;
     justify-self: center;
     margin-bottom: 20px;
@@ -549,20 +631,20 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 576px) {
-  .footer {
+  .rodape {
     padding: 40px 0 30px;
   }
-  .footer-grid {
+  .graderodape {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .footer-logo {
+  .logorodape {
     margin-bottom: 24px;
   }
-  .social-links {
+  .linkssociais {
     align-items: center;
   }
-  .social-links a {
+  .linkssociais a {
     justify-content: center;
   }
 }

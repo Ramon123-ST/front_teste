@@ -10,10 +10,10 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="container nav">
-      <div class="logo">
+  <!-- CABECALHO -->
+  <header class="cabecalho">
+    <div class="recipiente navegacao">
+      <div class="logotipo">
         <a href="#inicio">
           <img src="img/Logotipo_AlugaHub-removebg-preview 2.png" alt="AlugaHub" height="38">
         </a>
@@ -24,131 +24,189 @@
         <a href="#contato">Contato</a>
         <a href="#sobre">Sobre Nós</a>
       </nav>
-      <div class="search-bar">
+      <div class="barrabusca">
         <input type="text" placeholder="Buscar produtos...">
       </div>
-      <div class="icons">
-        <a href="#" class="icon-link" aria-label="Minha conta">
+      <div class="icones">
+        <a href="#" class="linkicone" aria-label="Minha conta">
           <img src="img/Vector.png" alt="Ícone de usuário">
         </a>
-        <a href="#" class="icon-link menu-toggle" aria-label="Menu">
+        <a href="#" class="linkicone alternarmenu" aria-label="Menu">
           <img src="img/fa_bars.png" alt="Ícone de menu">
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <h1>iPhone 17 Pro Max</h1>
-        <h2>TECNOLOGIA<br>QUE IMPACTA</h2>
-        <p class="price">
-          <del>R$ 625,13</del>
-          <strong>R$ 568,30/mês</strong>
-          <button class="btn">Verificar Agora</button>
-        </p>
-      </div>
-      <img src="img/iphone 17 png 1.png" alt="iPhone 17 Pro Max" class="hero-phone">
+  <section class="heroi" id="inicio">
+    <div class="carrossel">
+
+        <!-- Slide 1 -->
+        <div class="slide active" data-bg="linear-gradient(120deg, #1e40af 0%, #16a34a 100%)">
+            <div class="recipiente gradeheroi">
+                <div class="textoheroi fade-up">
+                    <h1>iPhone 17 Pro Max</h1>
+                    <h2>TECNOLOGIA<br>QUE IMPACTA</h2>
+                    <p class="preco">
+                        <del>R$ 625,13</del>
+                        <strong>R$ 568,30/mês</strong>
+                        <button class="botao">Verificar Agora</button>
+                    </p>
+                </div>
+                <img src="img/iphone 17 png 1.png" class="telefoneheroi fade-in" alt="">
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" data-bg="linear-gradient(120deg, #7c3aed 0%, #ec4899 100%)">
+            <div class="recipiente gradeheroi">
+                <div class="textoheroi fade-up">
+                    <h1>iPhone 17 Pro Max</h1>
+                    <h2>DESIGN<br>REVOLUCIONÁRIO</h2>
+                    <p class="preco">
+                        <del>R$ 625,13</del>
+                        <strong>R$ 568,30/mês</strong>
+                        <button class="botao">Verificar Agora</button>
+                    </p>
+                </div>
+                <img src="img/image (4).png" class="telefoneheroi fade-in" alt="">
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" data-bg="linear-gradient(120deg, #1f2937 0%, #4b5563 100%)">
+            <div class="recipiente gradeheroi">
+                <div class="textoheroi fade-up">
+                    <h1>iPhone 17 Pro Max</h1>
+                    <h2>PODER<br>SEM LIMITES</h2>
+                    <p class="preco">
+                        <del>R$ 625,13</del>
+                        <strong>R$ 568,30/mês</strong>
+                        <button class="botao">Verificar Agora</button>
+                    </p>
+                </div>
+                <img src="img/image.png" class="telefoneheroi fade-in" alt="">
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" data-bg="linear-gradient(120deg, #ea580c 0%, #f59e0b 100%)">
+            <div class="recipiente gradeheroi">
+                <div class="textoheroi fade-up">
+                    <h1>iPhone 17 Pro Max</h1>
+                    <h2>O FUTURO<br>NA SUA MÃO</h2>
+                    <p class="preco">
+                        <del>R$ 625,13</del>
+                        <strong>R$ 568,30/mês</strong>
+                        <button class="botao">Verificar Agora</button>
+                    </p>
+                </div>
+                <img src="img/image (2).png" class="telefoneheroi fade-in" alt="">
+            </div>
+        </div>
+
     </div>
-  </section>
+</section>
+
+<script src="hero.js"></script>
+
 
   <!-- PARCEIROS -->
-  <section class="partners">
-    <div class="container">
+  <section class="parceiros">
+    <div class="recipiente">
       <h3>AS PRINCIPAIS EMPRESAS DO MERCADO VOCÊ ENCONTRA AQUI!</h3>
-      <div class="partner-logos">
+      <div class="logoparceiros">
         <img src="img/Frame 15.png" alt="Locel">
         <img src="img/Frame 17.png" alt="Unir">
         <img src="img/Frame 16.png" alt="AlfaBit">
+        <img src="img/Frame 18.png" alt="Another Partner">
       </div>
-      <div class="promo-banner">
+      <div class="bannerpromo">
         Promoções Imperdíveis de até 20% OFF
       </div>
     </div>
   </section>
 
   <!-- OFERTAS -->
-  <section class="offers" id="produtos">
-    <div class="container">
-      <h2 class="title-orange">Melhores ofertas do dia</h2>
-      <div class="products-grid">
-        <div class="product-card">
+  <section class="ofertas" id="produtos">
+    <div class="recipiente">
+      <h2 class="tituloalaranja">Melhores ofertas do dia</h2>
+      <div class="gradeprodutos">
+        <div class="cartaproduto">
           <img src="img/image.png" alt="iPhone 13 Pro">
           <h4>Apple iPhone 13 Pro Smartphone</h4>
-          <p class="price"><del>R$ 625,13</del> <strong>R$ 568,30/mês</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 625,13</del> <strong>R$ 568,30/mês</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
-        <div class="product-card">
+        <div class="cartaproduto">
           <img src="img/image (1).png" alt="PS5">
           <h4>PlayStation 5 Slim Edição Digital</h4>
-          <p class="price"><del>R$ 347,49</del> <strong>R$ 315,90/mês</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 347,49</del> <strong>R$ 315,90/mês</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
-        <div class="product-card">
+        <div class="cartaproduto">
           <img src="img/image (2).png" alt="Notebook Gamer Acer Nitro">
           <h4>Notebook Gamer Acer Nitro</h4>
-          <p class="price"><del>R$ 356,27</del> <strong>R$ 339,30/mês</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 356,27</del> <strong>R$ 339,30/mês</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
-        <div class="product-card">
+        <div class="cartaproduto">
           <img src="img/image (3).png" alt="iPhone 15 Pro">
           <h4>iPhone 15 Pro</h4>
-          <p class="price"><del>R$ 679,26</del> <strong>R$ 645,98/mês</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 679,26</del> <strong>R$ 645,98/mês</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
-        <div class="product-card">
+        <div class="cartaproduto">
           <img src="img/image (2).png" alt="Relógio POLAR Pacer">
           <h4>POLAR Pacer</h4>
-          <p class="price"><del>R$ 179,16</del> <strong>R$ 162,87/mês</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 179,16</del> <strong>R$ 162,87/mês</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
-        <div class="product-card">
+        <div class="cartaproduto">
           <img src="img/image (4).png" alt="Câmera Canon EOS T7">
           <h4>CÂMERA CANON EOS T7</h4>
-          <p class="price"><del>R$ 365,90</del> <strong>R$ 345,60/dia</strong></p>
-          <button class="btn">Verificar Agora</button>
+          <p class="preco"><del>R$ 365,90</del> <strong>R$ 345,60/dia</strong></p>
+          <button class="botao">Verificar Agora</button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- AVALIAÇÕES -->
-  <section class="reviews" id="sobre">
-    <div class="container">
+  <!-- AVALIACOES -->
+  <section class="avaliacoes" id="sobre">
+    <div class="recipiente">
       <h2>NOSSAS AVALIAÇÕES</h2>
-      <div class="reviews-grid">
-        <div class="review-card">
+      <div class="gradeavaliacoes">
+        <div class="cartaavaliacao">
           <img src="https://i.pravatar.cc/150?img=1" alt="Maria Silva">
-          <div class="review-header">
+          <div class="cabecalhoavaliacao">
             <div>
               <strong>Maria Silva</strong>
               <p>São Paulo</p>
             </div>
-            <span class="rating">5.0</span>
+            <span class="classificacao">5.0</span>
           </div>
           <p>A rede realmente se importa com os usuários, o profissionalismo é impecável!</p>
         </div>
-        <div class="review-card">
+        <div class="cartaavaliacao">
           <img src="https://i.pravatar.cc/150?img=5" alt="João Pereira">
-          <div class="review-header">
+          <div class="cabecalhoavaliacao">
             <div>
               <strong>João Pereira</strong>
               <p>Rio de Janeiro</p>
             </div>
-            <span class="rating">4.5</span>
+            <span class="classificacao">4.5</span>
           </div>
           <p>Tive uma experiência fantástica com a equipe. O atendimento personalizado superou minhas expectativas. Recomendo muito!</p>
         </div>
-        <div class="review-card">
+        <div class="cartaavaliacao">
           <img src="https://i.pravatar.cc/150?img=8" alt="Ana Oliveira">
-          <div class="review-header">
+          <div class="cabecalhoavaliacao">
             <div>
               <strong>Ana Oliveira</strong>
               <p>Brasília</p>
             </div>
-            <span class="rating">5.0</span>
+            <span class="classificacao">5.0</span>
           </div>
           <p>Eles tornaram meu sonho de me possuir um iPhone em realidade! O suporte excepcional me guiou em cada passo. Estou muito feliz!</p>
         </div>
@@ -156,19 +214,19 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer" id="contato">
-    <div class="container footer-grid">
+  <!-- RODAPE -->
+  <footer class="rodape" id="contato">
+    <div class="recipiente graderodape">
       
-      <!-- Logo -->
-      <div class="footer-logo">
+      <!-- LOGOTIPO -->
+      <div class="logorodape">
         <a href="#inicio">
           <img src="img/Logotipo_AlugaHub-removebg-preview 2.png" alt="AlugaHub" height="38">
         </a>
       </div>
 
-      <!-- Coluna: Sobre -->
-      <div class="footer-col">
+      <!-- COLUNA: SOBRE -->
+      <div class="colunarodape">
         <h4>Sobre</h4>
         <ul>
           <li><a href="#inicio">Início</a></li>
@@ -177,8 +235,8 @@
         </ul>
       </div>
 
-      <!-- Coluna: Suporte -->
-      <div class="footer-col">
+      <!-- COLUNA: SUPORTE -->
+      <div class="colunarodape">
         <h4>Suporte</h4>
         <ul>
           <li><a href="#contato">Contato</a></li>
@@ -186,10 +244,10 @@
         </ul>
       </div>
 
-      <!-- Coluna: Redes Sociais -->
-      <div class="footer-col social">
+      <!-- COLUNA: REDES SOCIAIS -->
+      <div class="colunarodape social">
         <h4>Nossas Redes Sociais</h4>
-        <div class="social-links">
+        <div class="linkssociais">
           <a href="#" aria-label="Instagram">
             <img src="img/instagram (1).png" alt="Instagram">
             <span>Instagram</span>
