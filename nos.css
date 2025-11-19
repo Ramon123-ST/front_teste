@@ -1,10 +1,41 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #0572b8, #0c4b78);
-    color: white;
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+   font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0572b8, #0c4b78);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+.recipiente {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ========================================
+   CABECALHO
+   ======================================== */
 .cabecalho {
   background: #ffffff;
   padding: 10px 0;
@@ -29,6 +60,7 @@ body {
 .logotipo img { 
   height: 62px;
   width: auto;
+  margin-left: 5px;
  }
 
 .menu {
@@ -92,6 +124,7 @@ body {
   object-fit: contain;
   filter: grayscale(100%) brightness(0);
   transition: filter 0.3s ease;
+  margin-right: 60px;
 }
 
 .linkicone:hover img {
@@ -113,6 +146,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 
 /* SOBRE */
 
@@ -176,6 +210,7 @@ body {
     height: 120px;
     object-fit: cover;
     border-radius: 50%;
+    margin-left: 60px;
 }
 
 .card h3 {
@@ -194,9 +229,9 @@ body {
 .rodape {
   background: #bfdbfe;
   color: #1e293b;
-  padding: 50px 0 40px;
+  padding: 70px 0 40px;
   font-family: 'Inter', sans-serif;
-  height: 220px;
+  height: 290px;
 }
 
 .graderodape {
@@ -214,7 +249,7 @@ body {
 }
 
 .colunarodape h4 {
-  font-weight: 750;
+  font-weight: 700;
   font-size: 16px;
   margin-bottom: 36px;
   color: #1e40af;
@@ -234,7 +269,7 @@ body {
   color: #1e293b;
   text-decoration: none;
   font-size: 14.5px;
-  font-weight: 750;
+  font-weight: 700;
   transition: color 0.2s ease;
 }
 
@@ -268,4 +303,5 @@ body {
   width: 40px;
   height: 30px;
   object-fit: contain;
+  margin-left: 0;
 }

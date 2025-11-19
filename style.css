@@ -10,11 +10,9 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #fff;
-  color: #333;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+   font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0572b8, #0c4b78);
+  color: white;
 }
 
 html {
