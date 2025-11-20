@@ -316,3 +316,275 @@ button { font-family: inherit; cursor: pointer; }
   filter: brightness(0) saturate(100%);
   margin-left: 40px;
 }
+
+/* ========================================
+   RESPONSIVO – SOBRE / EQUIPE / RODAPÉ
+   ======================================== */
+
+/* Telas grandes – ajustes finos */
+@media (min-width: 1600px) {
+  .sobre,
+  .equipe,
+  .graderodape {
+    max-width: 1540px;
+    padding: 0 60px;
+  }
+}
+
+/* Notebooks e telas médias */
+@media (max-width: 1366px) {
+  .cabecalho {
+    left: 15px;
+    right: 15px;
+    max-width: calc(100% - 30px);
+  }
+  .barrabusca input {
+    width: 300px;
+  }
+  .menu {
+    gap: 36px;
+  }
+}
+
+/* Tablets e notebooks pequenos */
+@media (max-width: 1024px) {
+  .recipiente,
+  .graderodape {
+    padding: 0 30px;
+  }
+
+  /* Cabeçalho */
+  .navegacao {
+    gap: 15px;
+  }
+  .menu {
+    gap: 24px;
+  }
+  .menu a {
+    font-size: 15px;
+  }
+  .barrabusca input {
+    width: 240px;
+  }
+
+  /* Sobre */
+  .sobre {
+    margin-top: 160px;
+  }
+
+  /* Equipe – 2 colunas */
+  .grid-equipe {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .card {
+    width: 280px;
+  }
+  .card img {
+    margin-left: 80px;
+  }
+
+  /* Rodapé – 2 colunas */
+  .graderodape {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  .colunarodape h4,
+  .colunarodape ul,
+  .colunarodape.social .linkssociais img {
+    margin-left: 0;
+  }
+}
+
+/* Tablets pequenos e celulares grandes */
+@media (max-width: 768px) {
+  .cabecalho {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+    padding: 12px 0;
+  }
+  .logotipo img {
+    height: 52px;
+  }
+
+  /* Menu hambúrguer (reaproveita o mesmo estilo do outro arquivo) */
+  .menu {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 0 0 20px 20px;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
+  .menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .barrabusca {
+    order: 3;
+    width: 100%;
+  }
+  .barrabusca input {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Sobre */
+  .sobre {
+    margin-top: 140px;
+    padding: 0 20px;
+  }
+  .sobre h1 {
+    font-size: 36px;
+  }
+  .sobre p {
+    font-size: 18px;
+  }
+
+  /* Equipe – 1 coluna */
+  .grid-equipe {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .card {
+    width: 300px;
+    margin: 0 auto;
+  }
+  .card img {
+    margin-left: 90px;
+  }
+
+  /* Rodapé – 1 coluna */
+  .rodape {
+    padding: 80px 0 40px;
+  }
+  .graderodape {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  .logorodape img {
+    margin: 0 auto 20px;
+  }
+  .colunarodape.social .linkssociais {
+    align-items: center;
+  }
+  .colunarodape.social .linkssociais img {
+    margin-left: 0;
+  }
+}
+
+/* ========================================
+   CELULARES PEQUENOS (até 480px)
+   ======================================== */
+@media (max-width: 480px) {
+  .recipiente,
+  .graderodape {
+    padding: 0 20px;
+  }
+
+  .cabecalho {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    border-radius: 12px;
+  }
+
+/* ========================================
+   SEÇÃO SOBRE – TEXTO CENTRALIZADO (SEM JUSTIFICAR)
+   ======================================== */
+.sobre {
+  width: 90%;
+  max-width: 900px;           /* largura máxima confortável */
+  margin: 140px auto 0 auto;  /* centraliza horizontalmente + espaço do cabeçalho */
+  padding: 40px 20px;
+  
+  text-align: center;         /* só o título fica centralizado */
+}
+
+.sobre h1 {
+  text-align: center;         /* título bem no meio */
+  font-size: 42px;
+  color: #ffaf23;
+  margin-bottom: 30px;
+}
+
+.sobre p {
+  max-width: 720px;           /* controla a largura da linha (legibilidade) */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  
+  text-align: left;           /* texto normal, alinhado à esquerda */
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+  .equipe h2 {
+    font-size: 32px;
+  }
+
+  .card {
+    width: 260px;
+  }
+  .card img {
+    width: 100px;
+    height: 100px;
+    margin-left: 80px;
+  }
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .botao {
+    padding: 14px 32px;
+    font-size: 16px;
+  }
+}
+
+/* ========================================
+   CELULARES MUITO PEQUENOS (até 360px)
+   ======================================== */
+@media (max-width: 360px) {
+  .logotipo img {
+    height: 46px;
+  }
+  .barrabusca input {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .sobre h1 {
+    font-size: 28px;
+  }
+  .equipe h2 {
+    font-size: 28px;
+  }
+  .card img {
+    margin-left: 70px;
+  }
+}
+
+/* Ativação do hambúrguer */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: flex;
+  }
+  .menu {
+    order: 4;
+  }
+}
