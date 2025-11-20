@@ -631,39 +631,79 @@ img{
 
 /* Telas grandes - 1440px+ (ajustes finos) */
 @media (min-width: 1600px) {
-  .recipiente { max-width: 1540px; padding: 0 60px; }
-  .gradeheroi { gap: 120px; }
-  .telefoneheroi { max-width: 720px; }
-  .slide.active .telefoneheroi { right: 15%; }
+  .recipiente { 
+    max-width: 1540px; 
+    padding: 0 60px; 
+  }
+  .gradeheroi { 
+    gap: 120px; 
+  }
+  .telefoneheroi { 
+    max-width: 720px; 
+  }
+  .slide.active .telefoneheroi { 
+    right: 15%; 
+  }
 }
 
 /* Notebooks e telas médias (até 1366px) */
 @media (max-width: 1366px) {
-  .cabecalho { left: 15px; right: 15px; max-width: calc(100% - 30px); }
-  .barrabusca input { width: 280px; }
-  .menu { gap: 32px; }
-  .gradeheroi { gap: 50px; }
-  .telefoneheroi { max-width: 520px; }
-  .slide.active .telefoneheroi { right: 8%; }
+  .cabecalho { 
+    left: 15px; 
+    right: 15px; 
+    max-width: calc(100% - 30px); 
+  }
+  .barrabusca input { 
+    width: 280px; 
+  }
+  .menu { 
+    gap: 32px; 
+  }
+  .gradeheroi { 
+    gap: 50px; 
+  }
+  .telefoneheroi { 
+    max-width: 520px; 
+  }
+  .slide.active .telefoneheroi { 
+    right: 8%; 
+  }
 }
 
 /* Tablets e notebooks pequenos (até 1024px) */
 @media (max-width: 1024px) {
-  .recipiente { padding: 0 30px; }
+  .recipiente { 
+    padding: 0 30px; 
+  }
 
   /* Cabeçalho */
-  .navegacao { gap: 15px; }
-  .menu { gap: 24px; }
-  .menu a { font-size: 15px; }
-  .barrabusca input { width: 240px; padding: 10px 20px; }
+  .navegacao { 
+    gap: 15px; 
+  }
+  .menu { 
+    gap: 24px; 
+  }
+  .menu a { 
+    font-size: 15px; 
+  }
+  .barrabusca input { 
+    width: 240px; 
+    padding: 10px 20px; 
+  }
 
   /* Hero */
   .gradeheroi {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  .textoheroi { order: 2; }
-  .telefoneheroi-container { order: 1; text-align: center; position: relative; }
+  .textoheroi { 
+    order: 2; 
+  }
+  .telefoneheroi-container { 
+    order: 1; 
+    text-align: center; 
+    position: relative; 
+  }
   .telefoneheroi {
     position: static;
     transform: translateY(0) rotate(0) scale(1)!important;
@@ -684,15 +724,21 @@ img{
   }
 
   /* Avaliações */
-  .gradeavaliacoes { gap: 40px; }
-  .cartaavaliacao { width: 340px; }
+  .gradeavaliacoes { 
+    gap: 40px; 
+  }
+  .cartaavaliacao { 
+    width: 340px; 
+  }
 
   /* Rodapé */
   .graderodape {
     grid-template-columns: 1fr 1fr;
     gap: 50px;
   }
-  .logorodape img { margin-top: 0; }
+  .logorodape img { 
+    margin-top: 0; 
+  }
 }
 
 /* Tablets pequenos e celulares grandes (até 768px) */
@@ -705,9 +751,11 @@ img{
     max-width: calc(100% - 20px);
   }
 
-  .logotipo img { height: 52px; }
+  .logotipo img { 
+    height: 52px; 
+  }
 
-  /* Menu vira hambúrguer (você vai precisar do JS também) */
+  /* Menu vira hambúrguer */
   .menu {
     position: fixed;
     top: 90px;
@@ -731,22 +779,43 @@ img{
     visibility: visible;
   }
 
-  .barrabusca { order: 3; width: 100%; }
-  .barrabusca input { width: 100%; max-width: 400px; margin: 0 auto; }
+  .barrabusca { 
+    order: 3; 
+    width: 100%; 
+  }
+  .barrabusca input { 
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+  }
 
   /* Hero */
-  .heroi { min-height: 90vh; }
-  .slide { padding: 140px 0 80px; }
-  .textoheroi h1 { margin-top: 20px; }
-  .preco { justify-content: center; }
-  .botao { margin: 20px auto 0; display: block; width: fit-content; }
+  .heroi { 
+    min-height: 90vh; 
+  }
+  .slide { 
+    padding: 140px 0 80px; 
+  }
+  .textoheroi h1 { 
+    margin-top: 20px; 
+  }
+  .preco { 
+    justify-content: center; 
+  }
+  .botao { 
+    margin: 20px auto 0; 
+    display: block; 
+    width: fit-content; 
+  }
 
   /* Parceiros */
   .logoparceiros {
     flex-wrap: wrap;
     gap: 60px;
   }
-  .logoparceiros img { height: 60px; }
+  .logoparceiros img { 
+    height: 60px; 
+  }
 
   /* Ofertas */
   .gradeprodutos {
@@ -755,7 +824,10 @@ img{
   }
 
   /* Avaliações */
-  .avaliacoes h2 { font-size: 38px; margin-bottom: 60px; }
+  .avaliacoes h2 { 
+    font-size: 38px; 
+    margin-bottom: 60px; 
+  }
   .gradeavaliacoes {
     flex-direction: column;
     align-items: center;
@@ -768,46 +840,138 @@ img{
   }
 
   /* Rodapé */
-  .rodape { height: auto; padding: 80px 0 40px; }
+  .rodape { 
+    height: auto; 
+    padding: 80px 0 40px; 
+  }
   .graderodape {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 50px;
   }
-  .logorodape { text-align: center; }
-  .logorodape img { margin: 0 auto 20px; }
-  .linkssociais { align-items: center; }
+  .logorodape { 
+    text-align: center; 
+  }
+  .logorodape img { 
+    margin: 0 auto 20px; 
+  }
+  .linkssociais { 
+    align-items: center; 
+  }
 }
 
-/* Celulares pequenos (até 480px) */
+/* ========================================
+   CELULARES PEQUENOS (até 480px)
+   ======================================== */
 @media (max-width: 480px) {
-  .recipiente { padding: 0 20px; }
+  .recipiente { 
+    padding: 0 20px; 
+  }
 
-  .cabecalho { top: 8px; left: 8px; right: 8px; border-radius: 12px; }
+  .cabecalho { 
+    top: 8px; 
+    left: 8px;
+    right: 8px;
+    border-radius: 12px; 
+  }
 
-  .tituloalaranja { font-size: 36px; }
-  .parceiros h3 { font-size: 26px; }
-  .bannerpromo { font-size: 17px; height: 60px; border-radius: 30px; }
+  .heroi {
+    min-height: 80vh; 
+  }
 
-  .cartaproduto img { height: 240px; }
-  .cartaproduto h4 { font-size: 16px; height: auto; padding: 0 15px; }
+  .slide h1 { 
+    font-size: 20px;
+    margin-top: -10px;
+  }
 
-  .avaliacoes h2 { font-size: 32px; }
-  .cartaavaliacao { padding: 24px; }
-  .classificacao { float: none; display: inline-flex; margin-top: 10px; }
+  .slide h2 { 
+    font-size: 15px; 
+    margin-top: -10px;
+  }
 
-  .botao { padding: 14px 32px; font-size: 16px; }
+  strong { 
+    font-size: 8px; 
+    margin-top: -10px; 
+  }
+
+  .preco strong {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: -10px;
+  }
+
+  .slide img {
+    max-width: 320px;
+    right: 5%!important;
+    margin-top: 60px;
+  }
+    
+  .tituloalaranja { 
+    font-size: 36px; 
+  }
+  .parceiros h3 { 
+    font-size: 26px; 
+  }
+  .bannerpromo { 
+    font-size: 17px; 
+    height: 60px; 
+    border-radius: 30px; 
+  }
+
+  .cartaproduto img { 
+    height: 240px; 
+  }
+  .cartaproduto h4 { 
+    font-size: 16px; 
+    height: auto; 
+    padding: 0 15px; 
+  }
+
+  .avaliacoes h2 { 
+    font-size: 32px; 
+  }
+  .cartaavaliacao { 
+    padding: 24px; 
+  }
+  .classificacao { 
+    float: none; 
+    display: inline-flex; 
+    margin-top: 10px; 
+  }
+
+  .botao { 
+    padding: 14px 32px; 
+    font-size: 16px; 
+  }
 }
 
-/* Celulares muito pequenos (até 360px) */
+/* ========================================
+   CELULARES MUITO PEQUENOS (até 360px)
+   ======================================== */
 @media (max-width: 360px) {
-  .logotipo img { height: 46px; }
-  .barrabusca input { padding: 10px 16px; font-size: 14px; }
-  .textoheroi h1 { font-size: clamp(32px, 8vw, 48px); }
-  .preco strong { font-size: 36px; }
-  .telefoneheroi { max-width: 300px; }
+  .logotipo img { 
+    height: 46px; 
+  }
+  .barrabusca input { 
+    padding: 10px 16px; 
+    font-size: 14px; 
+  }
+  .textoheroi h1 { 
+    font-size: clamp(32px, 8vw, 48px); 
+  }
+  .preco strong { 
+    font-size: 36px; 
+  }
+  .telefoneheroi { 
+    max-width: 300px; 
+  }
 }
 
+/* ========================================
+   HAMBÚRGUER – ESTILO BASE + ATIVAÇÃO MOBILE
+   ======================================== */
 .hamburguer {
   display: none;
   flex-direction: column;
@@ -815,6 +979,7 @@ img{
   cursor: pointer;
   z-index: 1001;
 }
+
 .hamburguer span {
   width: 28px;
   height: 3px;
@@ -822,7 +987,12 @@ img{
   border-radius: 3px;
   transition: 0.3s;
 }
+
 @media (max-width: 768px) {
-  .hamburguer { display: flex; }
-  .menu { order: 4; }
+  .hamburguer { 
+    display: flex; 
+  }
+  .menu { 
+    order: 4; 
+  }
 }
