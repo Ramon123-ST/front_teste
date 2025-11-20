@@ -1,0 +1,407 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+   font-family: 'Inter', sans-serif;
+  background-color: white;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+.recipiente {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; }
+
+/* ========================================
+   CABECALHO
+   ======================================== */
+.cabecalho {
+  background: #ffffff;
+  padding: 10px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 15px;
+  max-width: calc(100% - 40px);
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logotipo img { 
+  height: 62px;
+  width: auto;
+  margin-left: 5px;
+ }
+
+.menu {
+  display: flex;
+  gap: 48px;
+}
+
+.menu a {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 15.5px;
+  transition: color 0.25s;
+}
+
+.menu a:hover { color: #3b82f6; }
+
+.barrabusca input {
+  width: 360px;
+  padding: 12px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: #f8fafc;
+  font-size: 14.5px;
+  transition: border 0.25s;
+}
+
+.barrabusca input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.icones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 40px;
+}
+
+.linkicone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.linkicone:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.linkicone img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0);
+  transition: filter 0.3s ease;
+  margin-right: 60px;
+}
+
+.linkicone:hover img {
+  filter: grayscale(0%) brightness(0);
+}
+
+.linkicone.alternarmenu::after {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero */
+.hera {
+    background: linear-gradient(120deg, #ff6b35 0%, #2c3e94 100%);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+.hera h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 0;
+}
+
+.entrada {
+    position: relative;
+    background: white;
+    border-radius: 50px 0 0 50px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.entrada .material-icons {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.entrada input {
+    width: 100%;
+    padding: 18px 20px 18px 60px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.formulario button {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.formulario button:hover { background: #000; }
+
+
+/* CONTATO — CARD PRINCIPAL */
+.contato {
+    padding: 120px 0;
+}
+
+.cartao {
+    background: #ffffff;
+    padding: 60px 80px;
+    border-radius: 32px;
+    text-align: center;
+    max-width: 1150px;
+    margin: 0 auto;
+    box-shadow:
+        0 25px 60px rgba(0,0,0,0.15),
+        0 4px 8px rgba(0,0,0,0.05);
+}
+
+.cartao h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.cartao > p {
+    color: #7a7a7a;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+.caixas {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+
+/* CAIXAS DE CONTATO */
+.caixa {
+    background: #ffcc80;
+    padding: 40px 30px;
+    border-radius: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow:
+        inset 0 0 0 rgba(0,0,0,0),
+        0 10px 25px rgba(0,0,0,0.12);
+}
+
+.caixa.horario {
+    background: #e1bee7;
+}
+
+.caixa .material-icons {
+    font-size: 44px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.195);
+}
+
+.caixa strong {
+    font-size: 18px;
+    font-weight: 700;
+    color: #161616dd;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.caixa p {
+    font-size: 16px;
+    color: #252525;
+    opacity: 0.85;
+}
+
+
+/* FAQ */
+.duvidas {
+    padding: 80px 0 120px;
+}
+
+.cartao-duvidas {
+    background: linear-gradient(135deg, #4caf50 0%, #1e3a8a 100%);
+    color: white;
+    padding: 60px 80px;
+    border-radius: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.cartao-duvidas h2 {
+    font-size: 32px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item {
+    margin-bottom: 40px;
+}
+
+.item strong {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.item p {
+    opacity: 0.95;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   RODAPE
+   ======================================== */
+.rodape {
+  background: #bfdbfe;
+  color: #1e293b;
+  padding: 70px 0 40px;
+  font-family: 'Inter', sans-serif;
+  height: 290px;
+}
+
+.graderodape {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.logorodape img {
+  height: 65px;
+  width: auto;
+  margin-top: -25px;
+  margin-right: 35px;
+}
+
+.colunarodape h4 {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 36px;
+  color: #1e40af;
+}
+
+.colunarodape ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.colunarodape ul li {
+  margin-bottom: 10px;
+}
+
+.colunarodape ul li a {
+  color: #1e293b;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.colunarodape ul li a:hover {
+  color: #3b82f6;
+}
+
+.linkssociais {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.linkssociais a {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14.5px;
+  transition: all 0.2s ease;
+}
+
+.linkssociais a:hover {
+  color: #3b82f6;
+  transform: translateX(4px);
+}
+
+.linkssociais img {
+  width: 40px;
+  height: 30px;
+  object-fit: contain;
+}
