@@ -892,16 +892,20 @@ img{
   }
 
   strong { 
-    font-size: 8px; 
+    font-size: 5px; 
     margin-top: -10px; 
   }
 
-  .preco strong {
+  
+
+  del{
+    font-size: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
     margin-top: -10px;
+    font-size: 20px;
   }
 
   .slide img {
