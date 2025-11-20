@@ -228,80 +228,91 @@ button { font-family: inherit; cursor: pointer; }
    ======================================== */
 .rodape {
   background: #bfdbfe;
+  padding: 90px 0 60px;
   color: #1e293b;
-  padding: 70px 0 40px;
-  font-family: 'Inter', sans-serif;
-  height: 290px;
 }
 
 .graderodape {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: 260px 180px 180px 300px; /* proporções exatas da imagem */
+  gap: 80px;
   align-items: start;
 }
 
+/* Logo */
+.logorodape {
+  display: block;
+}
+
 .logorodape img {
-  height: 65px;
-  width: auto;
-  margin-top: -25px;
-  margin-right: 35px;
+  height: 66px;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: -20px;
+  margin-left: 0px;
 }
 
+/* Títulos das colunas (SOBRE, SUPORTE, NOSSAS REDES SOCIAIS) */
 .colunarodape h4 {
-  font-weight: 700;
-  font-size: 16px;
-  margin-bottom: 36px;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   color: #1e40af;
+  margin-bottom: 28px;
+  margin-left: 40px;
 }
 
+/* Links normais */
 .colunarodape ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  margin-left: 40px;
 }
 
 .colunarodape ul li {
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 }
 
 .colunarodape ul li a {
-  color: #1e293b;
-  text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 700;
-  transition: color 0.2s ease;
+  color: #334155;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s;
 }
 
 .colunarodape ul li a:hover {
-  color: #3b82f6;
+  color: #1e40af;
 }
 
-.linkssociais {
+/* Redes sociais (coluna da direita) */
+.colunarodape.social .linkssociais {
   display: flex;
   flex-direction: column;
-  gap: 19px;
+  gap: 18px;
 }
 
-.linkssociais a {
+.colunarodape.social .linkssociais a {
   display: flex;
   align-items: center;
-  gap: 19px;
-  color: #1e293b;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 14.5px;
-  transition: all 0.2s ease;
+  gap: 16px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
 }
 
-.linkssociais a:hover {
-  color: #3b82f6;
-  transform: translateX(4px);
+.colunarodape.social .linkssociais a:hover {
+  color: #1e40af;
+  transform: translateX(6px);
 }
 
-.linkssociais img {
-  width: 40px;
-  height: 30px;
-  object-fit: contain;
-  margin-left: 0;
+/* Ícones das redes sociais - PRETOS e tamanho exato da imagem */
+.colunarodape.social .linkssociais img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%);
+  margin-left: 40px;
 }
