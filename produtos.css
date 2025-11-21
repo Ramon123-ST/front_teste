@@ -1,0 +1,290 @@
+/* ========================================
+   PÁGINA DE PRODUTOS
+   ======================================== */
+
+.pagina-produtos {
+  background: #1070d6;
+  min-height: 100vh;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-produtos {
+  margin-top: 100px;
+  padding: 40px 0;
+  min-height: calc(100vh - 100px);
+}
+
+.recipiente-grade {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* SIDEBAR FILTROS */
+.sidebar-filtros {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px 24px;
+  height: fit-content;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+}
+
+.filtro-grupo {
+  margin-bottom: 30px;
+}
+
+.filtro-grupo:last-child {
+  margin-bottom: 0;
+}
+
+.filtro-grupo h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.filtro-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%231e293b' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  transition: all 0.25s;
+}
+
+.filtro-select:hover {
+  border-color: #1070d6;
+}
+
+.filtro-select:focus {
+  outline: none;
+  border-color: #1070d6;
+  box-shadow: 0 0 0 3px rgba(16, 112, 214, 0.1);
+}
+
+/* ÁREA DE PRODUTOS */
+.area-produtos {
+  background: #1070d6;
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.gradeprodutos-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.cartaproduto-lista {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.cartaproduto-lista:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.cartaproduto-lista img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 8px;
+}
+
+.infoproduto {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.infoproduto h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.descricao {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.5;
+  min-height: 42px;
+}
+
+.preco-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.preco-original {
+  font-size: 13px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.preco-promo {
+  font-size: 20px;
+  font-weight: 700;
+  color: #10b981;
+  margin-top: 2px;
+}
+
+/* OFERTAS RÁPIDAS */
+.ofertas-rapidas {
+  background: #ffe4cc;
+  padding: 60px 0 80px;
+}
+
+.titulo-ofertas-rapidas {
+  text-align: center;
+  color: #dc2626;
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.gradeofertas-rapidas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carta-oferta-rapida {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.carta-oferta-rapida:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.badge-oferta {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  z-index: 10;
+}
+
+.badge-desconto {
+  background: #dc2626;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 11px;
+}
+
+.carta-oferta-rapida img {
+  width: 100%;
+  height: 240px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0 20px;
+}
+
+.carta-oferta-rapida h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 16px 0 12px;
+}
+
+.preco-oferta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 16px 0;
+}
+
+.preco-oferta del {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.preco-oferta strong {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+.botao-alugar {
+  background: #fb923c;
+  color: #ffffff;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 15px;
+  width: 100%;
+  margin-top: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(251, 146, 60, 0.3);
+}
+
+.botao-alugar:hover {
+  background: #f97316;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(251, 146, 60, 0.4);
+}
+
+/* RODAPE NA PÁGINA DE PRODUTOS */
+.pagina-produtos .rodape {
+  background: #bfdbfe;
+  margin-top: 0;
+}
+
+/* AJUSTES GERAIS */
+.pagina-produtos body {
+  background: #1070d6;
+}
