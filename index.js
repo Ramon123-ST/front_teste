@@ -18,3 +18,4 @@ document.querySelector('.heroi').style.background = slides[0].getAttribute('data
 
 // Troca a cada 4s
 setInterval(showNext, 4000);
+

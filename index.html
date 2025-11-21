@@ -9,33 +9,35 @@
     
 </head>
 <body>
-  <!-- CABECALHO -->
-  <header class="cabecalho">
-    <div class="recipiente navegacao">
-      <div class="logotipo">
-        <a href="#inicio">
-          <img src="img/logo.png" alt="AlugaHub" height="38">
-        </a>
-      </div>
-      <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#produtos">Produtos</a>
-        <a href="contatos.html">Contato</a>
-        <a href="sobre_nos.html">Sobre Nós</a>
-      </nav>
-      <div class="barrabusca">
-        <input type="text" placeholder="Buscar produtos...">
-      </div>
-      <div class="icones">
-        <a href="#" class="linkicone" aria-label="Minha conta">
-          <img src="img/Vector.png" alt="Ícone de usuário">
-        </a>
-        <a href="#" class="linkicone alternarmenu" aria-label="Menu">
-          <img src="img/barra.hanburgue.png" alt="Ícone de menu">
-        </a>
-      </div>
+ <header class="cabecalho">
+  <div class="recipiente navegacao">
+    <div class="logotipo">
+      <a href="#inicio">
+        <img src="img/logo.png" alt="AlugaHub" height="38">
+      </a>
     </div>
-  </header>
+
+    <!-- SEU MENU ORIGINAL, agora com id para ser reutilizado no mobile -->
+    <nav class="menu" id="menuMobile">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="contatos.html">Contato</a>
+      <a href="sobre_nos.html">Sobre Nós</a>
+    </nav>
+
+    <div class="barrabusca">
+      <input type="text" placeholder="Buscar produtos...">
+    </div>
+
+    <div class="icones">
+      <a href="#" class="linkicone" aria-label="Minha conta">
+        <img src="img/Vector.png" alt="Ícone de usuário">
+      </a>
+        <img src="img/barra.hanburgue.png" alt="Ícone de menu">
+      </a>
+    </div>
+  </div>
+</header>
 
   <section class="heroi" id="inicio">
     <div class="carrossel">
@@ -119,9 +121,6 @@
         <img src="img/uniir.png" alt="Unir">
         <img src="img/altbit.png" alt="AlfaBit">
         <img src="img/allu.png" alt="Another Partner">
-      </div>
-      <div class="bannerpromo">
-        Promoções Imperdíveis de até 20% OFF
       </div>
     </div>
   </section>
