@@ -485,14 +485,43 @@ img{
   box-shadow: 0 6px 40px rgba(0, 0, 0, 0.2);
 }
 
-.cartaavaliacao::after { content: ""; display: block; clear: both; }
+.cartaavaliacao::after { 
+  content: ""; 
+  display: block; 
+  clear: both; 
+}
 
-.cabecalhoavaliacao { margin: 14px 0 22px; overflow: hidden; }
-.cabecalhoavaliacao strong { font-size: 19px; color: #fff; font-weight: 700; display: block; }
-.cabecalhoavaliacao p { font-size: 14.5px; color: rgba(255, 255, 255, 0.92); margin-top: 5px; }
+/* CABEÇALHO ORGANIZADO — sem cortar nome */
+.cabecalhoavaliacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 14px 0 22px;
+}
 
+/* bloco com nome + cidade */
+.cabecalhoavaliacao div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cabecalhoavaliacao strong { 
+  font-size: 19px; 
+  color: #fff; 
+  font-weight: 700; 
+  display: block; 
+  white-space: nowrap;   
+}
+
+
+.cabecalhoavaliacao p { 
+  font-size: 14.5px; 
+  color: rgba(255, 255, 255, 0.92); 
+  margin-top: 5px; 
+}
+
+/* CLASSIFICAÇÃO — removido float */
 .classificacao {
-  float: right;
   background: #fff;
   color: #f59e0b;
   font-weight: 800;
@@ -502,13 +531,16 @@ img{
   display: flex;
   align-items: center;
   gap: 7px;
+  white-space: nowrap;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+ 
 }
 
 .classificacao::before {
   content: "★★★★★";
   font-size: 14px;
   letter-spacing: -1.5px;
+  
 }
 
 .cartaavaliacao > p:last-child {
@@ -517,8 +549,9 @@ img{
   font-size: 16px;
   line-height: 1.75;
   opacity: 0.96;
-  margin-top: 8px;
+  margin-top: 45px;
 }
+
 
 /* ========================================
    RODAPE
