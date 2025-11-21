@@ -315,15 +315,13 @@ img{
 .logoparceiros {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  gap: 5px; /* espaço entre elas */
   justify-items: center; /* centraliza as imagens */
   margin-top: 20px;
 }
 
 .logoparceiros img {
-  height: 70px;
-  width: auto;
-
+  height: 150px;
+  width: 150px;
   border-radius: 20%;
   background: #f1f5f9;
   transition: transform 0.3s;
