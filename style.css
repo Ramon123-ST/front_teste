@@ -821,24 +821,58 @@ img{
     margin: 0 auto; 
   }
 
-  /* Hero */
+
   .heroi { 
-    min-height: 90vh; 
+    min-height: 85vh; 
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
   }
-  .slide { 
-    padding: 140px 0 80px; 
+
+  .slide img { 
+    width: 180px;         /* aumentei um pouco para não ficar pequeno demais */
+    max-width: 70%;       /* evita estourar */
+    margin: 20px auto 0;
+    display: block;
   }
-  .textoheroi h1 { 
-    margin-top: 20px; 
+
+    .textoheroi h1 { 
+    font-size: 10px;       /* TÍTULO menor */
+    margin-top: 20px;
+    text-align: center;
   }
-  .preco { 
-    justify-content: center; 
+
+  .textoheroi h2 { 
+    font-size: 16px;       /* SUBTÍTULO menor */
+    margin-top: 0;
+    text-align: center;
   }
+  .textoheroi p {
+    font-size: 14px;       /* SUBTÍTULO / TEXTO menor */
+    text-align: center;
+  }
+
+  .preco strong { 
+    font-size: 10px;
+    margin-left: 40px;      /* PREÇO menor */
+  }
+  .preco del { 
+    font-size: 25px;  
+    margin-left: 115px;
+    
+}
+
+
+
+
   .botao { 
-    margin: 20px auto 0; 
+    margin: 10px auto 0; 
     display: block; 
     width: fit-content; 
+    padding: 12px 25px;   /* tamanho ideal no mobile */
+    font-size: 15px;
   }
+
 
   /* Parceiros */
   .logoparceiros {
@@ -890,7 +924,7 @@ img{
   .linkssociais { 
     align-items: center; 
   }
-}
+
 
 /* ========================================
    CELULARES PEQUENOS (até 480px)
@@ -912,7 +946,7 @@ img{
   }
 
   .slide h1 { 
-    font-size: 20px;
+    font-size: 10px;
     margin-top: -10px;
   }
 
@@ -924,6 +958,7 @@ img{
   strong { 
     font-size: 5px; 
     margin-top: -10px; 
+   
   }
 
   .logoparceiros img { 
@@ -940,12 +975,10 @@ img{
     align-items: center;
     gap: 12px;
     margin-top: -10px;
-    font-size: 10px;
   }
 
   .slide img {
-    max-width: 300px;
-    right: 5%!important;
+    width: 150px;
     margin-top: 60px;
   }
     
@@ -1012,3 +1045,4 @@ img{
 
 
 
+}
