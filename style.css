@@ -795,7 +795,7 @@ img{
     right: 0;
     background: #fff;
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 20px 20px;
     gap: 24px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     border-radius: 0 0 20px 20px;
@@ -821,6 +821,17 @@ img{
     margin: 0 auto; 
   }
 
+ .preco del,
+  .preco strong {
+    display: none !important;
+  }
+ 
+
+  .telefoneheroi {
+    height: 200px;
+    width: 170px;
+  }
+
   /* Hero */
   .heroi { 
     min-height: 90vh; 
@@ -829,7 +840,7 @@ img{
     padding: 140px 0 80px; 
   }
   .textoheroi h1 { 
-    margin-top: 20px; 
+    margin-top: 70px; 
   }
   .preco { 
     justify-content: center; 
@@ -838,6 +849,7 @@ img{
     margin: 20px auto 0; 
     display: block; 
     width: fit-content; 
+    margin-top: -10px;
   }
 
   /* Parceiros */
