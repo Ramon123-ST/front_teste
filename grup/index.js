@@ -44,5 +44,3 @@ setInterval(showNext, 4000);
       overlay.classList.remove('active');
     });
   });
-
-  

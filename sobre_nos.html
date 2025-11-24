@@ -8,34 +8,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-<main>
-  <!-- CABECALHO -->
- <header class="cabecalho">
-    <div class="recipiente navegacao">
-      <div class="logotipo">
-        <a href="index.html">
-          <img src="img/logo.png" alt="AlugaHub" height="38">
-        </a>
-      </div>
-      <nav class="menu">
-        <a href="index.html">Início</a>
-        <a href="index.html">Produtos</a>
-        <a href="contatos.html">Contato</a>
-        <a href="sobre_nos.html">Sobre Nós</a>
-      </nav>
-      <div class="barrabusca">
-        <input type="text" placeholder="Buscar produtos...">
-      </div>
-      <div class="icones">
-        <a href="#" class="linkicone" aria-label="Minha conta">
-          <img src="img/Vector.png" alt="Ícone de usuário">
-        </a>
-        <a href="#" class="linkicone alternarmenu" aria-label="Menu">
-          <img src="img/barra.hanburgue.png" alt="Ícone de menu">
-        </a>
-      </div>
+
+  <!-- HEADER -->
+<header class="cabecalho">
+  <div class="recipiente navegacao">
+    
+    <!-- LOGO -->
+    <div class="logotipo">
+      <a href="#inicio">
+        <img src="img/logo.png" alt="AlugaHub" height="38">
+      </a>
     </div>
-  </header>
+
+    <!-- MENU DESKTOP -->
+    <nav class="menu" id="menuDesktop">
+      <a href="#inicio">Início</a>
+      <a href="#produtos">Produtos</a>
+      <a href="contatos.html">Contato</a>
+      <a href="sobre_nos.html">Sobre Nós</a>
+    </nav>
+
+    <!-- BARRA DE BUSCA -->
+    <div class="barrabusca">
+      <input type="text" placeholder="Buscar produtos...">
+    </div>
+
+    <!-- ÍCONE DE USUÁRIO -->
+    <div class="icones">
+      <a href="#" class="linkicone" aria-label="Minha conta">
+        <img src="img/Vector.png" alt="Ícone de usuário">
+      </a>
+    </div>
+
+    <!-- BOTÃO HAMBÚRGUER -->
+    <div class="hamburguer" id="btnHamburguer">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+<!-- MENU MOBILE (FORA DO HEADER) -->
+<div class="menu-mobile-overlay" id="overlay"></div>
+
+<nav class="menu-mobile" id="menuMobile">
+  <a href="#inicio">Início</a>
+  <a href="#produtos">Produtos</a>
+  <a href="contatos.html">Contato</a>
+  <a href="sobre_nos.html">Sobre Nós</a>
+</nav>
+
+<!-- SCRIPT DO MENU -->
+<script>
+  const btn = document.getElementById("btnHamburguer");
+  const menuMobile = document.getElementById("menuMobile");
+  const overlay = document.getElementById("overlay");
+
+  btn.addEventListener("click", () => {
+    menuMobile.classList.toggle("ativo");
+    overlay.classList.toggle("ativo");
+    btn.classList.toggle("ativo");
+  });
+
+  overlay.addEventListener("click", () => {
+    menuMobile.classList.remove("ativo");
+    overlay.classList.remove("ativo");
+    btn.classList.remove("ativo");
+  });
+</script>
+
+
 
 <script src="index.js"></script>
 

@@ -1,0 +1,988 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0572b8, #0c4b78);
+  color: white;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+.recipiente {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+img { 
+  max-width: 100%; 
+  display: block; 
+}
+a { 
+  text-decoration: none; 
+  color: inherit; 
+}
+button { 
+  font-family: inherit; 
+  cursor: pointer; 
+  border: none;
+  background: none;
+}
+
+/* ========================================
+   CABECALHO
+   ======================================== */
+.cabecalho {
+  background: #ffffff;
+  padding: 10px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 15px;
+  max-width: calc(100% - 40px);
+}
+
+.navegacao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.logotipo img { 
+  height: 62px;
+  width: auto;
+
+}
+
+.menu {
+  display: flex;
+  gap: 48px;
+}
+
+/* ================================
+   MENU MOBILE – HAMBURGUER
+================================ */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburguer span {
+  width: 28px;
+  height: 3px;
+  background: #333;
+  border-radius: 3px;
+}
+
+/* ================================
+   MENU MOBILE LATERAL
+================================ */
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: -260px; /* começa FORA da tela */
+  width: 260px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: 3px 0px 15px rgba(0,0,0,0.1);
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: left 0.3s ease-in-out;
+  z-index: 9999;
+  border-radius: 0 20px 20px 0;
+  
+}
+
+/* Quando abrir */
+.menu-mobile.ativo {
+  left: 0;
+}
+
+/* LINKS DO MENU (IGUAL IMAGEM) */
+.menu-mobile a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  border-bottom: 1px solid #f1f1f1;
+  margin-top: 10px;
+}
+
+/* Remove a linha do último item */
+.menu-mobile a:last-child {
+  border-bottom: none;
+}
+
+
+
+/* Fundo escuro por trás */
+.menu-mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.35);
+  display: none;
+  z-index: 9990;
+}
+
+.menu-mobile-overlay.ativo {
+  display: block;
+}
+
+
+
+
+.menu a {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 15.5px;
+  transition: color 0.25s;
+}
+
+.menu a:hover { 
+  color: #3b82f6; 
+}
+
+.barrabusca input {
+  width: 360px;
+  padding: 12px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  background: #f8fafc;
+  font-size: 14.5px;
+  transition: border 0.25s;
+}
+
+.barrabusca input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.icones {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.linkicone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.linkicone:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.linkicone img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0);
+  transition: filter 0.3s ease;
+}
+
+.linkicone:hover img {
+  filter: grayscale(0%) brightness(0);
+}
+
+/* Botão Hamburguer */
+.hamburguer {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.hamburguer span {
+  width: 25px;
+  height: 3px;
+  background: #1e293b;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* ========================================
+   SEÇÃO SOBRE
+   ======================================== */
+.sobre {
+  width: 90%;
+  max-width: 900px;
+  margin: 140px auto 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.sobre h1 {
+  font-size: clamp(32px, 5vw, 42px);
+  color: #ffaf23;
+  margin-bottom: 30px;
+}
+
+.sobre p {
+  max-width: 720px;
+  margin: 0 auto 24px auto;
+  text-align: left;
+  font-size: clamp(16px, 2.5vw, 20px);
+  line-height: 1.7;
+}
+
+/* ========================================
+   SEÇÃO EQUIPE
+   ======================================== */
+.equipe {
+  width: 90%;
+  max-width: 1300px;
+  margin: 40px auto 70px;
+  text-align: center;
+}
+
+.equipe h2 {
+  font-size: clamp(32px, 4vw, 38px);
+  color: #ffaf23;
+  margin-bottom: 40px;
+}
+
+.grid-equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+.card {
+  background: #f2f2f2c9;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  padding: 25px 15px;
+  color: black;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+}
+
+.card h3 {
+  margin-top: 15px;
+  font-size: clamp(18px, 3vw, 20px);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card .social i {
+  font-size: 28px;
+  margin: 0 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.card .social i:hover {
+  color: #3b82f6;
+}
+
+/* ========================================
+   RODAPÉ (ATUALIZADO COM NOVAS CORES)
+   ======================================== */
+.rodape {
+  background: #e0f2fe;     /* cor nova */
+  padding: 90px 0 60px;
+  color: #1e293b;
+}
+
+.graderodape {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 260px 180px 180px 300px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Logo */
+.logorodape img {
+  height: 66px;
+  display: block;
+  margin-bottom: 10px;
+  margin-top: -20px;
+  filter: brightness(0) saturate(100%) hue-rotate(200deg); /* logo azul escuro moderno */
+}
+
+/* Títulos */
+.colunarodape h4 {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e40af;     /* azul moderno */
+  margin-bottom: 28px;
+  margin-left: 40px;
+  position: relative;
+}
+
+/* Linha embaixo dos títulos */
+.colunarodape h4::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+  margin: 12px 0 0 0;
+  margin-left: 20px;
+}
+
+/* Lista */
+.colunarodape ul {
+  list-style: none;
+  margin-left: 40px;
+}
+
+.colunarodape ul li {
+  margin-bottom: 16px;
+}
+
+
+.colunarodape ul li a:hover {
+  color: #1e40af;
+  transform: translateX(4px);
+}
+
+/* Redes Sociais */
+.colunarodape.social .linkssociais {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+}
+
+.colunarodape.social .linkssociais a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #334155;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s;
+}
+
+.colunarodape.social .linkssociais a:hover {
+  color: #1e40af;
+  transform: translateX(6px);
+}
+
+/* Ícones */
+.colunarodape.social .linkssociais img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) saturate(100%);
+  transition: filter 0.3s;
+  margin-left: 0px;
+}
+
+.colunarodape.social .linkssociais a:hover img {
+  filter: brightness(0) saturate(100%) hue-rotate(220deg);
+}
+
+/* ========================================
+   RESPONSIVO
+   ======================================== */
+
+/* Telas grandes - 1440px+ (ajustes finos) */
+@media (min-width: 1600px) {
+  .recipiente { 
+    max-width: 1540px; 
+    padding: 0 60px; 
+  }
+  .gradeheroi { 
+    gap: 120px; 
+  }
+  .telefoneheroi { 
+    max-width: 720px; 
+  }
+  .slide.active .telefoneheroi { 
+    right: 15%; 
+  }
+}
+
+/* ========================================
+   RESPONSIVO
+   ======================================== */
+
+/* Telas grandes */
+@media (min-width: 1600px) {
+  .sobre,
+  .equipe,
+  .graderodape {
+    max-width: 1540px;
+    padding: 0 60px;
+  }
+}
+
+/* Notebooks e telas médias */
+@media (max-width: 1366px) {
+  .cabecalho {
+    left: 15px;
+    right: 15px;
+    max-width: calc(100% - 30px);
+  }
+  
+  .barrabusca input {
+    width: 300px;
+  }
+  
+  .menu {
+    gap: 36px;
+  }
+}
+
+/* Tablets e notebooks pequenos */
+@media (max-width: 1024px) {
+  .recipiente,
+  .graderodape {
+    padding: 0 30px;
+  }
+
+  .navegacao {
+    gap: 15px;
+  }
+  
+  .menu {
+    gap: 24px;
+  }
+  
+  .menu a {
+    font-size: 15px;
+  }
+  
+  .barrabusca input {
+    width: 240px;
+  }
+
+  .sobre {
+    margin-top: 160px;
+  }
+
+  .grid-equipe {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .card {
+    width: 280px;
+  }
+
+  .graderodape {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+  
+  .colunarodape h4,
+  .colunarodape ul,
+  .colunarodape.social .linkssociais img {
+    margin-left: 0;
+  }
+}
+
+/* Tablets pequenos e celulares grandes */
+@media (max-width: 768px) {
+  .cabecalho {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+    padding: 12px 0;
+  }
+
+  .navegacao {
+    padding: 0 15px;
+    position: relative;
+  }
+
+  .logotipo img {
+    height: 52px;
+  }
+
+  /* Menu hambúrguer visível */
+  .hamburguer {
+    display: flex;
+    order: 2;
+    z-index: 1001;
+  }
+
+  /* Menu principal escondido por padrão */
+  .menu {
+    position: fixed;
+    top: 90px;
+    left: 10px;
+    right: 10px;
+    background: #fff;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 0 0 20px 20px;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+    display: flex;
+  }
+
+  .menu.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .barrabusca {
+    order: 3;
+    width: 150px;
+    margin-right: 15px;
+    
+  }
+
+  
+ @media (max-width: 768px) {
+  .cabecalho {
+    padding: 12px 0;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    max-width: calc(100% - 20px);
+  }
+
+  .logotipo img { 
+    height: 52px; 
+  }
+
+  .linkicone img {
+  margin-left: 90px;
+}
+
+  /* MENU LATERAL MOBILE – agora com o espaçamento EXATAMENTE igual à sua foto */
+@media (max-width: 768px) {
+
+  .menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: -280px !important;
+    width: 260px !important;
+    height: 100vh !important;
+    background: #fff;
+    padding: 50px 0 40px 40px !important;   /* mais espaço em cima e na esquerda */
+    display: flex;
+    flex-direction: column;
+    gap: 24px !important;                   /* ← esse é o espaçamento perfeito entre as linhas */
+    box-shadow: 3px 0 20px rgba(0,0,0,0.15);
+    border-radius: 0 20px 20px 0 !important;
+    transition: left 0.35s ease !important;
+    z-index: 9999;
+    overflow-y: auto;
+    font-size: 18px;                        /* texto um pouco maior (igual à foto) */
+    font-weight: 500;
+  }
+
+  .menu.active {
+    left: 0 !important;
+  }
+
+  /* Links do menu – cor e estilo igual à imagem */
+  .menu a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 0;               /* dá um “hit area” maior */
+    opacity: 0.85;
+    transition: opacity 0.2s;
+  }
+  .menu a:hover,
+  .menu a:active {
+    opacity: 1;
+    color: #000;
+  }
+
+  /* A alça preta (agora ainda mais fiel à sua foto) */
+  .menu::after {
+    content: '';
+    position: absolute;
+    right: -12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 56px;                 /* um pouquinho mais curta que antes – fica idêntico */
+    background: #000;
+    border-radius: 3px;
+    opacity: 0.55;
+  }
+
+  /* Overlay escuro */
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease;
+    z-index: 9998;
+  }
+  .menu-overlay.active { opacity: 1; visibility: visible; }
+}
+
+  .barrabusca { 
+    order: 3; 
+    width: 100%; 
+  }
+  .barrabusca input { 
+    width: 100%; 
+    max-width: 400px; 
+    margin: 0 auto; 
+  }
+
+.sobre h1 {
+    margin-top: 40px;
+  }
+
+  .rodape {
+    background: #e0f2fe;           /* azul bem claro, mais moderno */
+    padding: 70px 20px 50px;
+    text-align: center;
+  }
+
+  .graderodape {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Logo no topo, maior e centralizada */
+  .logorodape img {
+    height: 68px;
+    margin: 0 auto 30px;
+    filter: brightness(0) saturate(100%) hue-rotate(200deg); /* deixa o logo azul escuro bonito */
+  }
+
+  /* Títulos das colunas (SOBRE, SUPORTE, REDES) */
+  .colunarodape h4 {
+    margin-left: 0 !important;
+    font-size: 18px;
+    font-weight: 800;
+    color: #1e40af;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  /* Linha sutil embaixo dos títulos */
+  .colunarodape h4::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: #3b82f6;
+    border-radius: 2px;
+    margin: 12px auto 0;
+  }
+
+  /* Links do menu */
+  .colunarodape ul {
+    margin-left: 0 !important;
+    padding: 0;
+  }
+
+  .colunarodape ul li {
+    margin-bottom: 16px;
+  }
+
+  .colunarodape ul li a {
+    color: #334155;
+    font-size: 16.5px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .colunarodape ul li a:hover {
+    color: #1e40af;
+    transform: translateX(4px);
+  }
+
+  /* Redes sociais — ícones maiores e bonitos */
+  .colunarodape.social .linkssociais {
+    gap: 20px;
+    justify-content: center;
+    margin-left: 50px;
+  }
+
+  .colunarodape.social .linkssociais a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #334155;
+    transition: all 0.3s;
+  }
+
+  .colunarodape.social .linkssociais a:hover {
+    color: #1e40af;
+    transform: translateY(-3px);
+  }
+
+  .colunarodape.social .linkssociais img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) saturate(100%);
+    transition: filter 0.3s;
+    margin-left: 20px;
+ 
+    
+  }
+
+  .colunarodape.social .linkssociais a:hover img {
+    filter: brightness(0) saturate(100%) hue-rotate(220deg); /* azul no hover */
+  }
+}
+
+  .icones {
+    gap: 15px;
+  }
+
+  .linkicone img {
+    margin-right: 0;
+  }
+
+  /* Sobre */
+  .sobre {
+    margin-top: 140px;
+    padding: 0 20px;
+  }
+
+  /* Equipe - 1 coluna */
+  .grid-equipe {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .card {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Rodapé - 1 coluna */
+  .rodape {
+    padding: 80px 0 40px;
+  }
+  
+  .graderodape {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .logorodape img {
+    margin: 0 auto 20px;
+  }
+  
+  .colunarodape.social .linkssociais {
+    align-items: center;
+  }
+  
+  .colunarodape.social .linkssociais img {
+    margin-left: 0;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .recipiente,
+  .graderodape {
+    padding: 0 20px;
+  }
+
+  .cabecalho {
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    border-radius: 12px;
+  }
+
+  .navegacao {
+    padding: 0 10px;
+  }
+
+  .sobre {
+    margin-top: 120px;
+    padding: 20px 10px;
+  }
+
+  .sobre h1 {
+    font-size: 28px;
+  }
+
+  .sobre p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .equipe h2 {
+    font-size: 28px;
+  }
+
+  .grid-equipe {
+    gap: 30px;
+  }
+
+  .card {
+    width: 260px;
+    padding: 20px 10px;
+  }
+
+  .card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .icones {
+    gap: 10px;
+  }
+
+  .linkicone {
+    width: 40px;
+    height: 40px;
+  }
+
+  .linkicone img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Celulares muito pequenos */
+@media (max-width: 360px) {
+  .logotipo img {
+    height: 46px;
+  }
+
+  .barrabusca input {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .sobre h1 {
+    font-size: 26px;
+  }
+
+  .equipe h2 {
+    font-size: 26px;
+  }
+
+  .card {
+    width: 240px;
+  }
+
+  .card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .graderodape {
+    padding: 0 15px;
+  }
+}
+
+/* Estados ativos para interações mobile */
+@media (max-width: 768px) {
+  .hamburguer.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .hamburguer.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburguer.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Foco visível para acessibilidade */
+a:focus-visible,
+button:focus-visible,
+.linkicone:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

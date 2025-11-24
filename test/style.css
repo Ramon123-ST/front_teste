@@ -900,22 +900,23 @@ img{
 }
 
   /* Menu vira hambúrguer */
-  .menu-mobile {
-  position: fixed;
-  top: 0;
-  left: -260px; /* começa FORA da tela */
-  width: 260px;
-  height: 100vh;
-  background: #fff;
-  box-shadow: 3px 0px 15px rgba(0,0,0,0.1);
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  transition: left 0.3s ease-in-out;
-  z-index: 9999;
-  border-radius: 0 20px 20px 0;
-}
-
+  .menu {
+    position: fixed;
+    top: 90px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    border-radius: 0 0 20px 20px;
+    transform: translateY(-150%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+    z-index: 999;
+  }
   .menu.active {
     transform: translateY(0);
     opacity: 1;
@@ -1077,7 +1078,7 @@ img{
   .colunarodape.social .linkssociais {
     gap: 20px;
     justify-content: center;
-    margin-left: 90px;
+    margin-left: 70px;
   }
 
   .colunarodape.social .linkssociais a {
@@ -1101,7 +1102,6 @@ img{
     filter: brightness(0) saturate(100%);
     transition: filter 0.3s;
     margin-left: 20px;
-    
     
   }
 
