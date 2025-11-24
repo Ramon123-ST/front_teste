@@ -62,26 +62,33 @@ button { font-family: inherit; cursor: pointer; }
   width: auto;
   margin-left: 5px;
  }
-
+/* ================================
+   MENU DESKTOP
+================================ */
 .menu {
   display: flex;
   gap: 48px;
 }
-
 
 .menu a {
   font-weight: 600;
   color: #1e293b;
   font-size: 15.5px;
   transition: color 0.25s;
+  text-decoration: none;
 }
 
-.menu a:hover { color: #3b82f6; }
+.menu a:hover {
+  color: #3b82f6;
+}
 
+/* ================================
+   BARRA DE BUSCA
+================================ */
 .barrabusca input {
   width: 360px;
   padding: 12px 24px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #c7c7c7;
   border-radius: 30px;
   background: #f8fafc;
   font-size: 14.5px;
@@ -93,6 +100,9 @@ button { font-family: inherit; cursor: pointer; }
   border-color: #3b82f6;
 }
 
+/* ================================
+   ÍCONES DO CABEÇALHO
+================================ */
 .icones {
   display: flex;
   align-items: center;
@@ -108,24 +118,130 @@ button { font-family: inherit; cursor: pointer; }
   height: 44px;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 0.28s ease; /* só o aumento */
+  transition: transform 0.28s ease;
 }
 
 .linkicone:hover {
-  transform: scale(1.18); /* aumenta suavemente */
+  transform: scale(1.18);
 }
 
-/* Ícone preto → colorido no hover */
+/* Ícone preto → colorido */
 .linkicone img {
   width: 22px;
   height: 22px;
   object-fit: contain;
   filter: grayscale(100%) brightness(0);
   transition: filter 0.3s ease;
+  margin-left: 20px;
 }
 
 .linkicone:hover img {
-  filter: grayscale(0%) brightness(1);
+  filter: grayscale(0) brightness(1);
+}
+
+/* ================================
+   HAMBURGUER (MOBILE)
+================================ */
+.hamburguer {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  transition: transform .25s ease;  /* efeito ao clicar */
+}
+
+.hamburguer:active {
+  transform: scale(0.88) rotate(2deg); /* efeito solicitado */
+}
+
+.hamburguer span {
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: all .3s;
+}
+
+/* ================================
+   ANIMAÇÃO DO X
+================================ */
+.hamburguer.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburguer.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburguer.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* ================================
+   MENU MOBILE
+================================ */
+.menu-mobile-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s;
+  z-index: 1999;
+}
+
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  padding: 80px 30px 30px;
+  transition: left .4s ease;
+  z-index: 2000;
+  box-shadow: 2px 0 10px rgba(0,0,0,.2);
+}
+
+.menu-mobile.active {
+  left: 0;
+}
+
+.menu-mobile-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-mobile a {
+  display: block;
+  padding: 15px 0;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.menu-mobile a:last-child {
+  border-bottom: none;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 768px) {
+
+  .barrabusca input {
+    width: 140px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .hamburguer {
+    display: flex;
+  }
+
+  .navegacao {
+    justify-content: space-between;
+  }
 }
 
 
@@ -539,10 +655,10 @@ img{
 
 
 /* ========================================
-   RODAPE
+   RODAPÉ (ATUALIZADO COM NOVAS CORES)
    ======================================== */
 .rodape {
-  background: #bfdbfe;
+  background: #e0f2fe;     /* cor nova */
   padding: 90px 0 60px;
   color: #1e293b;
 }
@@ -552,36 +668,45 @@ img{
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 260px 180px 180px 300px; /* proporções exatas da imagem */
+  grid-template-columns: 260px 180px 180px 300px;
   gap: 80px;
   align-items: start;
 }
 
 /* Logo */
-.logorodape {
-  display: block;
-}
-
 .logorodape img {
   height: 66px;
   display: block;
   margin-bottom: 10px;
   margin-top: -20px;
-  margin-left: 0px;
+  filter: brightness(0) saturate(100%) hue-rotate(200deg); /* logo azul escuro moderno */
 }
 
-/* Títulos das colunas (SOBRE, SUPORTE, NOSSAS REDES SOCIAIS) */
+/* Títulos */
 .colunarodape h4 {
   font-weight: 800;
   font-size: 15px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #1e40af;
+  color: #1e40af;     /* azul moderno */
   margin-bottom: 28px;
   margin-left: 40px;
+  position: relative;
 }
 
-/* Links normais */
+/* Linha embaixo dos títulos */
+.colunarodape h4::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+  margin: 12px 0 0 0;
+  margin-left: 0;
+}
+
+/* Lista */
 .colunarodape ul {
   list-style: none;
   margin-left: 40px;
@@ -595,18 +720,21 @@ img{
   color: #334155;
   font-weight: 600;
   font-size: 15px;
-  transition: color 0.3s;
+  transition: all 0.3s;
+  display: inline-block;
 }
 
 .colunarodape ul li a:hover {
   color: #1e40af;
+  transform: translateX(4px);
 }
 
-/* Redes sociais (coluna da direita) */
+/* Redes Sociais */
 .colunarodape.social .linkssociais {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  margin-left: 40px;
 }
 
 .colunarodape.social .linkssociais a {
@@ -624,12 +752,17 @@ img{
   transform: translateX(6px);
 }
 
-/* Ícones das redes sociais - PRETOS e tamanho exato da imagem */
+/* Ícones */
 .colunarodape.social .linkssociais img {
   width: 24px;
   height: 24px;
   filter: brightness(0) saturate(100%);
-  margin-left: 40px;
+  transition: filter 0.3s;
+  margin-left: 0px;
+}
+
+.colunarodape.social .linkssociais a:hover img {
+  filter: brightness(0) saturate(100%) hue-rotate(220deg);
 }
 
 /* ========================================
@@ -762,7 +895,9 @@ img{
     height: 52px; 
   }
 
-  
+  .linkicone img {
+  margin-left: 90px;
+}
 
   /* Menu vira hambúrguer */
   .menu {
@@ -943,7 +1078,7 @@ img{
   .colunarodape.social .linkssociais {
     gap: 20px;
     justify-content: center;
-    margin-left: 90px;
+    margin-left: 70px;
   }
 
   .colunarodape.social .linkssociais a {
@@ -964,9 +1099,10 @@ img{
   .colunarodape.social .linkssociais img {
     width: 28px;
     height: 28px;
-    margin-left: 0 !important;
     filter: brightness(0) saturate(100%);
     transition: filter 0.3s;
+    margin-left: 20px;
+    
   }
 
   .colunarodape.social .linkssociais a:hover img {

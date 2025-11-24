@@ -9,43 +9,57 @@
     
 </head>
 <body>
- <header class="cabecalho">
+
+<header class="cabecalho">
   <div class="recipiente navegacao">
+    
+    <!-- Logo -->
     <div class="logotipo">
       <a href="#inicio">
         <img src="img/logo.png" alt="AlugaHub" height="38">
       </a>
     </div>
 
-    <!-- SEU MENU ORIGINAL, agora com id para ser reutilizado no mobile -->
-    <nav class="menu" id="menuMobile">
+    <!-- Menu Desktop (some no mobile) -->
+    <nav class="menu" id="menuDesktop">
       <a href="#inicio">Início</a>
       <a href="#produtos">Produtos</a>
       <a href="contatos.html">Contato</a>
       <a href="sobre_nos.html">Sobre Nós</a>
     </nav>
 
+    <!-- Barra de busca (desktop) -->
     <div class="barrabusca">
       <input type="text" placeholder="Buscar produtos...">
     </div>
 
+    <!-- Ícone usuário -->
     <div class="icones">
       <a href="#" class="linkicone" aria-label="Minha conta">
         <img src="img/Vector.png" alt="Ícone de usuário">
       </a>
+    </div>
 
-      <!-- botão hambúrguer: mantenha essa classe alternarmenu -->
-      <a href="#" class="linkicone alternarmenu" aria-label="Menu">
-        <img src="img/barra.hanburgue.png" alt="Ícone de menu">
-      </a>
+    <!-- Botão Hamburguer (aparece só no mobile) -->
+    <div class="hamburguer" id="btnHamburguer">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
 </header>
 
+<!-- Menu Mobile (fora do header, fixo na tela) -->
+<div class="menu-mobile-overlay" id="overlay"></div>
+<nav class="menu-mobile" id="menuMobile">
+  <a href="#inicio">Início</a>
+  <a href="#produtos">Produtos</a>
+  <a href="contatos.html">Contato</a>
+  <a href="sobre_nos.html">Sobre Nós</a>
+</nav>
 
-
-
-  <section class="heroi" id="inicio">
+<!-- Seu conteúdo existente (heroi, etc.) continua aqui embaixo -->
+ <section class="heroi" id="inicio">
     <div class="carrossel">
 
         <!-- Slide 1 -->
@@ -114,6 +128,10 @@
 
     </div>
 </section>
+
+</body>
+</html>
+</header>
 
 <script src="index.js"></script>
 

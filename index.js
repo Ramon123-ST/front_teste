@@ -19,3 +19,28 @@ document.querySelector('.heroi').style.background = slides[0].getAttribute('data
 // Troca a cada 4s
 setInterval(showNext, 4000);
 
+ const btnHamburguer = document.getElementById('btnHamburguer');
+  const menuMobile = document.getElementById('menuMobile');
+  const overlay = document.getElementById('overlay');
+
+  btnHamburguer.addEventListener('click', () => {
+    btnHamburguer.classList.toggle('active');
+    menuMobile.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  // Fechar ao clicar no overlay
+  overlay.addEventListener('click', () => {
+    btnHamburguer.classList.remove('active');
+    menuMobile.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+
+  // Fechar ao clicar em algum link do menu (opcional)
+  document.querySelectorAll('.menu-mobile a').forEach(link => {
+    link.addEventListener('click', () => {
+      btnHamburguer.classList.remove('active');
+      menuMobile.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  });
